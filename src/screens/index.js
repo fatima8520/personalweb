@@ -1,6 +1,12 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import {CssBaseline,Button,Drawer, Hidden,IconButton} from '@material-ui/core'
+import {
+  CssBaseline,
+  Button,
+  Drawer,
+  Hidden,
+  IconButton
+} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import { makeStyles } from '@material-ui/core/styles'
 import profileImage from '../assets/images/profile.jpg'
@@ -104,14 +110,14 @@ function ResponsiveDrawer(props) {
       </div>
       <div className={classes.bottonDrawer}>
         <Button
-          color={lang === 'fa' ? 'primary' : 'secondary'}
+          color={lang === 'fa' ? 'primary' : '#fff'}
           onClick={() => changeLanguage('fa')}
         >
           فارسی
         </Button>
         /
         <Button
-          color={lang === 'en' ? 'primary' : 'secondary'}
+          color={lang === 'en' ? 'primary' : '#fff'}
           onClick={() => changeLanguage('en')}
         >
           English

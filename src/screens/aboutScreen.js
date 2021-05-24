@@ -7,6 +7,9 @@ import Title from '../components/title'
 import { getTranslate } from '../localization/index'
 import MainImage from '../assets/images/main.jpg'
 import Service from '../components/service'
+import resume from '../assets/doc/cv.pdf'
+import PageHead from '../customComponent/pageHead'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,10 +69,13 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main
   }
 }))
+
 const AboutScreen = () => {
   const classes = useStyles()
   const translate = getTranslate()
   return (
+    <>
+    <PageHead title="Fatemeh Raiyat" description="Web Developer" />
     <Grid container className={classes.root}>
       <Grid className={classes.aboutGrid} container item xs={12}>
         <Title title={translate.aboutme} />
@@ -120,7 +126,13 @@ const AboutScreen = () => {
               Raiyat.f@gmail.com
             </Typography>
             <div style={{ display: 'flex', marginTop: 20 }}>
-              <Button variant="contained" color="primary">
+              <Button
+                variant="contained"
+                color="primary"
+                component="a"
+                target="_blank"
+                href={resume}
+              >
                 {translate.downloadcv}
               </Button>
             </div>
@@ -148,6 +160,7 @@ const AboutScreen = () => {
         </Grid>
       </Grid>
     </Grid>
+    </>
   )
 }
 export default AboutScreen

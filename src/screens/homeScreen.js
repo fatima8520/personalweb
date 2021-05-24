@@ -3,9 +3,10 @@ import { Grid, Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import TelegramIcon from '@material-ui/icons/Telegram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import InstagramIcon from '@material-ui/icons/Instagram'
+import GitupIcon from '@material-ui/icons/GitHub'
 import { getTranslate } from '../localization/index'
 import './home.css'
+import PageHead from '../customComponent/pageHead'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,30 +42,48 @@ const HomeScreen = () => {
   const classes = useStyles()
   const translate = getTranslate()
   return (
-    <div className={classes.root}>
-      <div id="stars" />
-      <div id="stars2" />
-      <div id="stars3" />
-      <Grid>
-        <Typography variant="h1">
-          {translate.hi}
-          <span> {translate.name}</span>
-          {translate.hi2}
-        </Typography>
-        <Typography variant="subtitle1">{translate.desc}</Typography>
-        <div className={classes.divIcons}>
-          <IconButton className={classes.iconBttnStyle}>
-            <TelegramIcon color="secondary" />
-          </IconButton>
-          <IconButton className={classes.iconBttnStyle}>
-            <LinkedInIcon color="secondary" />
-          </IconButton>
-          <IconButton className={classes.iconBttnStyle}>
-            <InstagramIcon color="secondary" />
-          </IconButton>
-        </div>
-      </Grid>
-    </div>
+    <>
+      <PageHead title="Fatemeh Raiyat" description="Web Developer" />
+      <div className={classes.root}>
+        <div id="stars" />
+        <div id="stars2" />
+        <div id="stars3" />
+        <Grid>
+          <Typography variant="h1">
+            {translate.hi}
+            <span> {translate.name}</span>
+            {translate.hi2}
+          </Typography>
+          <Typography variant="subtitle1">{translate.desc}</Typography>
+          <div className={classes.divIcons}>
+            <IconButton
+              className={classes.iconBttnStyle}
+              component="a"
+              href="https://telegram.me/fatimaryt"
+              target="_blank"
+            >
+              <TelegramIcon color="primary" />
+            </IconButton>
+            <IconButton
+              className={classes.iconBttnStyle}
+              component="a"
+              href="https://www.linkedin.com/in/fateme-raiyat-3058849b"
+              target="_blank"
+            >
+              <LinkedInIcon color="primary" />
+            </IconButton>
+            <IconButton
+              className={classes.iconBttnStyle}
+              component="a"
+              href="https://github.com/fatima8520"
+              target="_blank"
+            >
+              <GitupIcon color="primary" />
+            </IconButton>
+          </div>
+        </Grid>
+      </div>
+    </>
   )
 }
 export default HomeScreen

@@ -7,6 +7,7 @@ import Title from '../components/title'
 import { getTranslate } from '../localization/index'
 import ContactForm from '../components/contactForm'
 import Contact from '../components/contact'
+import PageHead from '../customComponent/pageHead'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,33 +38,36 @@ const ContactScreen = () => {
   const classes = useStyles()
   const translate = getTranslate()
   return (
-    <Grid container className={classes.root}>
-      <Grid className={classes.contactGrid} container item xs={12}>
-        <Title title={translate.contactme} />
-        <Grid container direction="row">
-          <Grid item xs={12} md={6} className={classes.formGrid}>
-            <ContactForm />
-          </Grid>
-          <Grid item xs={12} md={6} className={classes.detailsGrid}>
-            <Contact
-              icon={<PhoneIcon className={classes.iconStyle} />}
-              title={translate.phone}
-              text1="(+98)9177370142"
-            />
-            <Contact
-              icon={<EmailIcon className={classes.iconStyle} />}
-              title={translate.email}
-              text1="Raiyat.f@gmail.com"
-            />
-            <Contact
-              icon={<RoomIcon className={classes.iconStyle} />}
-              title={translate.address}
-              text1={translate.addressdesc}
-            />
+    <>
+      <PageHead title="Fatemeh Raiyat" description="Web Developer" />
+      <Grid container className={classes.root}>
+        <Grid className={classes.contactGrid} container item xs={12}>
+          <Title title={translate.contactme} />
+          <Grid container direction="row">
+            <Grid item xs={12} md={6} className={classes.formGrid}>
+              <ContactForm />
+            </Grid>
+            <Grid item xs={12} md={6} className={classes.detailsGrid}>
+              <Contact
+                icon={<PhoneIcon className={classes.iconStyle} />}
+                title={translate.phone}
+                text1="(+98)9177370142"
+              />
+              <Contact
+                icon={<EmailIcon className={classes.iconStyle} />}
+                title={translate.email}
+                text1="Raiyat.f@gmail.com"
+              />
+              <Contact
+                icon={<RoomIcon className={classes.iconStyle} />}
+                title={translate.address}
+                text1={translate.addressdesc}
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </>
   )
 }
 export default ContactScreen

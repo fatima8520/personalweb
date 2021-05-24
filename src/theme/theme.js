@@ -1,7 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles'
+import createBreakpoints from '@material-ui/core/styles/createBreakpoints'
 import palette from './palette'
 import { getDirection, getFont } from '../localization'
 
+const breakpoints = createBreakpoints({})
 const theme = createMuiTheme({
   palette,
   direction: getDirection(),
@@ -24,7 +26,7 @@ const theme = createMuiTheme({
       lineHeight: '2.7rem',
       fontFamily: getFont(),
       color: '#fff',
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 14 : 16
       }
     },
@@ -34,7 +36,7 @@ const theme = createMuiTheme({
       lineHeight: '2.14rem',
       fontFamily: getFont(),
       color: '#fff',
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 20 : 18
       }
     },
@@ -44,7 +46,7 @@ const theme = createMuiTheme({
       color: '#fff',
       lineHeight: '2.43rem',
       fontFamily: getFont(),
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 22 : 24
       }
     },
@@ -55,7 +57,7 @@ const theme = createMuiTheme({
       textAlign: 'left',
       color: '#fff',
       fontFamily: getFont(),
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 28 : 30
       }
     },
@@ -65,7 +67,7 @@ const theme = createMuiTheme({
       lineHeight: '3.2857rem',
       color: '#fff',
       fontFamily: getFont(),
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 32 : 34
       }
     },
@@ -75,7 +77,7 @@ const theme = createMuiTheme({
       lineHeight: '4rem',
       fontFamily: getFont(),
       color: '#fff',
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 40 : 42
       }
     },
@@ -85,7 +87,7 @@ const theme = createMuiTheme({
       fontWeight: 400,
       fontFamily: getFont(),
       textAlign: getDirection === 'rtl' ? 'justify' : 'left',
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 13 : 15
       }
     },
@@ -96,7 +98,7 @@ const theme = createMuiTheme({
       letterSpacing: 1,
       textAlign: 'center',
       fontFamily: getFont(),
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 11 : 13
       }
     },
@@ -106,7 +108,7 @@ const theme = createMuiTheme({
       fontWeight: 400,
       marginTop: 15,
       fontFamily: getFont(),
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 15 : 17
       }
     },
@@ -120,7 +122,7 @@ const theme = createMuiTheme({
       color: '#FFF',
       letterSpacing: 2,
       fontFamily: getFont(),
-      [theme.breakpoints.down('xs')]: {
+      [breakpoints.down('xs')]: {
         fontSize: getDirection() === 'rtl' ? 12 : 14
       }
     }
